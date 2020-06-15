@@ -1,0 +1,23 @@
+<h1>Listing Boards</h1>
+
+<table>
+  <tr>
+    <th>Board</th>
+    <th>Description</th>
+    <th><%= link_to 'New board', new_admin_board_path %></th>
+  </tr>
+
+  <% @boards.each do |board| %>
+    <tr>
+      <td><%= board.board %></td>
+      <td><%= board.description %></td>
+      <td><%= link_to 'Show', admin_board_path(board) %></td>
+      <td><%= link_to 'Edit', edit_admin_board_path(board) %></td>
+      <td><%= link_to 'Destroy', admin_board_path(board),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', admin_root_path %>

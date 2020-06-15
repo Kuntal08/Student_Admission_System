@@ -1,0 +1,30 @@
+<%= form_with(model: [:admin, @board], local: true) do |form| %>
+
+  <% if @board.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@board.errors.count, "error") %> Prohibited
+        this board from being saved:
+      </h2>
+      <ul>
+        <% @board.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :board %><br>
+    <%= form.text_field :board %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
