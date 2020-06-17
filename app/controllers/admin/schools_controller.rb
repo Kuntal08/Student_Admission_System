@@ -16,10 +16,10 @@ class Admin::SchoolsController < ApplicationController
   end
 
   def create
-    @school = School.new(board_params)
+    @school = School.new(school_params)
 
     if @school.save
-      redirect_to admin_boards_url
+      redirect_to [:admin, @school]
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class Admin::SchoolsController < ApplicationController
   def update
     @school = School.find(params[:id])
 
-    if @school.update(board_params)
+    if @school.update(school_params)
       redirect_to [:admin, @school]
     else
       render 'edit'
@@ -39,12 +39,12 @@ class Admin::SchoolsController < ApplicationController
     @school = School.find(params[:id])
     @school.destroy
 
-    redirect_to admin_boards_path
+    redirect_to admin_schools_path
   end
 
   private
-    def board_params
-      params.require(:school).permit(:board, :description)
+    def school_params
+      params.require(:school).permit(:name, :image, :description)
     end
-    
+
 end

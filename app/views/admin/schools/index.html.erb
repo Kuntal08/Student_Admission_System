@@ -1,0 +1,23 @@
+<h1>Listing Schools</h1>
+
+<table>
+  <tr>
+    <th>School Name</th>
+    <th>Description</th>
+    <th><%= link_to 'New board', new_admin_school_path %></th>
+  </tr>
+
+  <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.name %></td>
+      <td><%= school.description %></td>
+      <td><%= link_to 'Show', admin_school_path(school) %></td>
+      <td><%= link_to 'Edit', edit_admin_school_path(school) %></td>
+      <td><%= link_to 'Destroy', admin_school_path(school),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', admin_root_path %>
