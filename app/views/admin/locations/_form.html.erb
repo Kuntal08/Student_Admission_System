@@ -1,0 +1,35 @@
+<%= form_with(model: [:admin, @location], local: true) do |form| %>
+
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@location.errors.count, "error") %> Prohibited
+        this location from being saved:
+      </h2>
+      <ul>
+        <% @location.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :city_name %><br>
+    <%= form.text_field :city_name %>
+  </p>
+
+  <p>
+    <%= form.label :country_name %><br>
+    <%= form.text_field :country_name %>
+  </p>
+
+  <p>
+    <%= form.label :pin %><br>
+    <%= form.number_field :pin %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
