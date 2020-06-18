@@ -1,4 +1,6 @@
-class Admin::SchoolsController < ApplicationController
+class Admin::SchoolsController < Admin::BasesController
+  before_action :is_admin?
+
   def index
     @schools = School.all
   end

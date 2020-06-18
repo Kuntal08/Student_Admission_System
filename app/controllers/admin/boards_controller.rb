@@ -1,4 +1,5 @@
-class Admin::BoardsController < ApplicationController
+class Admin::BoardsController < Admin::BasesController
+  before_action :is_admin?
 
   def index
     @boards = Board.all
@@ -45,7 +46,7 @@ class Admin::BoardsController < ApplicationController
 
   private
     def board_params
-      params.require(:board).permit(:board, :description)
+      params.require(:board).permit(:board, :full_form,:description)
     end
 
 end

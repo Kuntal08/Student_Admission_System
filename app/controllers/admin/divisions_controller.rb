@@ -1,4 +1,5 @@
-class Admin::DivisionsController < ApplicationController
+class Admin::DivisionsController < Admin::BasesController
+  before_action :is_admin?
 
   def index
     @divisions = Division.all
