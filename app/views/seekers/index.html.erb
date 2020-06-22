@@ -1,0 +1,31 @@
+<h1>Application Dashboard</h1>
+<table>
+  <tr>
+    <th>School</th>
+    <th>Board</th>
+    <th>Division</th>
+    <th>Status</th>
+  </tr>
+
+  <% @seekers.each do |seeker| %>
+  <tr>
+    <td><%= School.find(seeker.school).name %></td>
+    <td><%= Board.find(seeker.board).board %></td>
+    <td><%= Division.find(seeker.division).division %></td>
+    <% if seeker.approve == false && seeker.reject == false %>
+      <td> Pending </td>
+    <% elsif seeker.approve == true %>
+      <td> Approved </td>
+    <% elsif seeker.reject == true %>
+      <td> Reject </td>
+    <% end %>
+    <td><%= link_to 'Show', seeker_path(seeker) %></td>
+    <td><%= link_to 'Update Application', edit_seeker_path(seeker) %></td>
+    <td><%= link_to 'Withdraw Application', seeker_path(seeker),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to "Back", root_path %>

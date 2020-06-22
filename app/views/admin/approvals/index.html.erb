@@ -1,0 +1,24 @@
+<h1>Approval section</h1>
+<table>
+  <tr>
+    <th>Admission Seeker Name</th>
+    <th>School</th>
+    <th>Board</th>
+    <th>Division</th>
+  </tr>
+
+  <% @seekers.each do |seeker| %>
+    <% if seeker.approve == false && seeker.reject == false %>
+      <tr>
+        <td><%= seeker.first_name %> <%= seeker.middle_name %> <%= seeker.last_name %></td>
+        <td><%= School.find(seeker.school).name %></td>
+        <td><%= Board.find(seeker.board).board %></td>
+        <td><%= Division.find(seeker.division).division %></td>
+        <td><%= link_to 'Approve', admin_approve_path(seeker) %></td>
+        <td><%= link_to 'Reject', admin_reject_path(seeker) %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+  <%= link_to "Back", root_path %>

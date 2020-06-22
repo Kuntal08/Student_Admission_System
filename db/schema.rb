@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_091536) do
+ActiveRecord::Schema.define(version: 2020_06_21_142013) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2020_06_18_091536) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "school_id"
+    t.index ["school_id"], name: "index_divisions_on_school_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -62,6 +64,32 @@ ActiveRecord::Schema.define(version: 2020_06_18_091536) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "location_id"
+    t.integer "board_id"
+    t.index ["board_id"], name: "index_schools_on_board_id"
+    t.index ["location_id"], name: "index_schools_on_location_id"
+  end
+
+  create_table "seekers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "middle_name"
+    t.string "last_name"
+    t.text "home_address"
+    t.string "email"
+    t.integer "phone"
+    t.date "birth_date"
+    t.string "father_name"
+    t.string "mother_name"
+    t.string "mother_employment"
+    t.string "father_employment"
+    t.integer "board"
+    t.integer "school"
+    t.integer "division"
+    t.boolean "approve", default: false
+    t.boolean "reject", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "gender"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,4 +102,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_091536) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "divisions", "schools"
+  add_foreign_key "schools", "boards"
+  add_foreign_key "schools", "locations"
 end

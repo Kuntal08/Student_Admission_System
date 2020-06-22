@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'locations/new'
+
   root 'homes#index'
   resources :users
   resources :sessions
+  resources :seekers
 
   namespace:admin do
     root 'bases#index'
@@ -10,6 +11,9 @@ Rails.application.routes.draw do
     resources :schools
     resources :divisions
     resources :locations
+    get "/approve/:id", to:"approvals#approve", as:'approve'
+    get "/reject/:id", to:"approvals#reject", as:'reject'
+    resources :approvals, only: [:index, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

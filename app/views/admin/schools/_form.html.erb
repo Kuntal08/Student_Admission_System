@@ -14,20 +14,30 @@
     </div>
   <% end %>
 
-  <p>
+  <div class="field">
     <%= form.label :name %><br>
     <%= form.text_field :name %>
-  </p>
+  </div>
 
-  <p>
+  <div class="field">
     <%= form.label :image %><br>
     <%= form.file_field :image %>
-  </p>
+  </div>
 
-  <p>
+  <div class="field">
     <%= form.label :description %><br>
     <%= form.text_area :description %>
-  </p>
+  </div>
+
+  <div class="field">
+    <%= form.label :board_id %>
+    <%= form.select(:board_id, @board_options) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_id %>
+    <%= form.select(:location_id, @location_options) %>
+  </div>
 
   <p>
     <%= form.submit %>

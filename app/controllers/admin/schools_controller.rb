@@ -7,14 +7,20 @@ class Admin::SchoolsController < Admin::BasesController
 
   def show
     @school = School.find(params[:id])
+    @board = Board.find(@school.board_id)
+    @location = Location.find(@school.location_id)
   end
 
   def new
     @school = School.new
+    @board_options = Board.all.map{ |b| [b.board, b.id]}
+    @location_options = Location.all.map{ |l| [l.city_name, l.id]}
   end
 
   def edit
     @school = School.find(params[:id])
+    @board_options = Board.all.map{ |b| [b.board, b.id]}
+    @location_options = Location.all.map{ |l| [l.city_name, l.id]}
   end
 
   def create
@@ -29,7 +35,6 @@ class Admin::SchoolsController < Admin::BasesController
 
   def update
     @school = School.find(params[:id])
-
     if @school.update(school_params)
       redirect_to [:admin, @school]
     else
@@ -46,7 +51,7 @@ class Admin::SchoolsController < Admin::BasesController
 
   private
     def school_params
-      params.require(:school).permit(:name, :image, :description)
+      params.require(:school).permit(:name, :image, :description, :board_id, :location_id)
     end
 
 end

@@ -6,7 +6,10 @@
       <%= link_to "Log Out", session_path("current"), method: "delete" %>
       <% if current_user.try(:admin?)%>
         <%= link_to "Admin Panel", admin_root_path %>
+        <%= link_to "Approval Panel", admin_approvals_path%>
       <% else %>
+        <%= link_to "Admission Form", new_seeker_path %>
+        <%= link_to "Candidate Dashboard", seekers_path %>
       <% end %>
       <%= link_to "Profile", user_path(current_user.id) %>
 
