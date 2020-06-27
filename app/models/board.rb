@@ -1,4 +1,5 @@
 class Board < ApplicationRecord
+  has_many :seekers
   has_many :schools
   has_many :locations, through: :schools
 

@@ -5,13 +5,6 @@ class Admin::ApprovalsController < Admin::BasesController
     @seekers = Seeker.all
   end
 
-  def show
-    @seeker = Seeker.find(params[:id])
-    @board = Board.find(@seeker.board)
-    @school = School.find(@seeker.school)
-    @division = Division.find(@seeker.division)
-  end
-
   def approve
     @seeker = Seeker.find(params[:id])
     @seeker.approve = true

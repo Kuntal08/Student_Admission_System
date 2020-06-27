@@ -7,32 +7,47 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'notifications_center', 'data-turbolinks-track': 'reload' %>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous">
-    </script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous">
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   </head>
 
   <body>
+    <div class="message">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>
       <% end %>
-
+    </div>
+    <div class="navbar">
+      <div class="user-name">
+        <% if current_user%>
+          <%= current_user.name %>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Options
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <div class="nav-item"><%= link_to "Log Out", session_path("current"), method: "delete" %></div>
+          <% if current_user.try(:admin?)%>
+            <div class="nav-item"><%= link_to "Edit Categories", admin_root_path %></div>
+            <div class="nav-item"><%= link_to "Approval Panel", admin_approvals_path%></div>
+          <% else %>
+            <div class="nav-item"><%= link_to "Admission Form", new_seeker_path %></div>
+            <div class="nav-item"><%= link_to "Candidate Dashboard", seekers_path %></div>
+          <% end %>
+            <div class="nav-item"><%= link_to "Profile", user_path(current_user.id) %></div>
+        </div>
+        <% else %>
+          <div class="nav-field"><%= link_to "Sign Up", new_user_path %></div>
+          <div class="nav-field"><%= link_to "Sign In", new_session_path %></div>
+        <% end %>
+      </div>
+    </div>
       <%= yield %>
   </body>
 </html>

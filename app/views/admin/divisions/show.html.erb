@@ -1,16 +1,28 @@
-<p>
-  <strong>Division:</strong>
-  <%= @division.division %>
-</p>
+<div class="info">
+  <div class="heading">
+    <strong>Division:</strong>
+  </div>
+  <div class="data">
+    <%= @division.division %>
+  </div>
+</div>
 
-<p>
-  <strong>Stage:</strong>
-  <%= @division.stage %>
-</p>
+<div class="info">
+  <div class="heading">
+    <strong>Stage:</strong>
+  </div>
+  <div class="data">
+    <%= @division.stage %>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @division.description %>
-</p>
+<div class="info">
+  <div class="heading">
+    <strong>Description:</strong>
+  </div>
+  <div class="data">
+    <%= @division.description %>
+  </div>
+</div>
 
 <%= link_to 'Back', admin_divisions_path %>

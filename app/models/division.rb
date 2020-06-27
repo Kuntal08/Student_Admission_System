@@ -1,4 +1,5 @@
 class Division < ApplicationRecord
+  has_many :seekers
   belongs_to :school
 
   validates :division, presence: true, length: { maximum: 30, minimum: 1 }

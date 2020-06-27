@@ -1,26 +1,46 @@
-<p>
-  <strong>School Image:</strong>
-  <%= image_tag(@school.image) %>
-</p>
+<div class="info">
+  <div class="heading">
+    <strong>School Image:</strong>
+  </div>
+  <div class="data">
+    <%= image_tag(@school.image) %>
+  </div>
+</div>
 
-<p>
-  <strong>School Name:</strong>
-  <%= @school.name %>
-</p>
+<div class="info">
+  <div class="heading">
+    <strong>School Name:</strong>
+  </div>
+  <div class="data">
+    <%= @school.name %>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @school.description %>
-</p>
+<div class="info">
+  <div class="heading">
+    <strong>Description:</strong>
+  </div>
+  <div class="data">
+    <%= @school.description %>
+  </div>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @location.city_name %>
-</p>
+<div class="info">
+  <div class="heading">
+    <strong>Location:</strong>
+  </div>
+  <div class="data">
+    <%= @location.city_name %>
+  </div>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @board.board %>
-</p>
+<div class="info">
+  <div class="heading">
+    <strong>Board:</strong>
+  </div>
+  <div class="data">
+    <%= @board.board %>
+  </div>
+</div>
 
 <%= link_to 'Back', admin_schools_path %>

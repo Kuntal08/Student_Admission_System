@@ -14,6 +14,7 @@
         <td><%= School.find(seeker.school).name %></td>
         <td><%= Board.find(seeker.board).board %></td>
         <td><%= Division.find(seeker.division).division %></td>
+        <td><%= link_to 'Show', seeker_path(seeker) %></td>
         <td><%= link_to 'Approve', admin_approve_path(seeker) %></td>
         <td><%= link_to 'Reject', admin_reject_path(seeker) %></td>
       </tr>
