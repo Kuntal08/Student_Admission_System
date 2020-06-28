@@ -9,21 +9,23 @@
 
   <% @seekers.each do |seeker| %>
   <tr>
-    <td><%= School.find(seeker.school).name %></td>
-    <td><%= Board.find(seeker.board).board %></td>
-    <td><%= Division.find(seeker.division).division %></td>
+    <td><%= School.find(seeker.school_id).name %></td>
+    <td><%= Board.find(seeker.board_id).board %></td>
+    <td><%= Division.find(seeker.division_id).division %></td>
     <% if seeker.approve == false && seeker.reject == false %>
       <td> Pending </td>
     <% elsif seeker.approve == true %>
       <td> Approved </td>
     <% elsif seeker.reject == true %>
-      <td> Reject </td>
+      <td> Rejected </td>
     <% end %>
     <td><%= link_to 'Show', seeker_path(seeker) %></td>
-    <td><%= link_to 'Update Application', edit_seeker_path(seeker) %></td>
-    <td><%= link_to 'Withdraw Application', seeker_path(seeker),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } %></td>
+    <% if seeker.approve == false && seeker.reject == false %>
+      <td><%= link_to 'Update Application', edit_seeker_path(seeker) %></td>
+      <td><%= link_to 'Withdraw Application', seeker_path(seeker),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
   <% end %>
 </table>

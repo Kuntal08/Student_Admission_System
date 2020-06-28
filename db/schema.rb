@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_21_142013) do
+ActiveRecord::Schema.define(version: 2020_06_27_130930) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -82,14 +82,17 @@ ActiveRecord::Schema.define(version: 2020_06_21_142013) do
     t.string "mother_name"
     t.string "mother_employment"
     t.string "father_employment"
-    t.integer "board"
-    t.integer "school"
-    t.integer "division"
     t.boolean "approve", default: false
     t.boolean "reject", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "gender"
+    t.integer "board_id"
+    t.integer "school_id"
+    t.integer "division_id"
+    t.index ["board_id"], name: "index_seekers_on_board_id"
+    t.index ["division_id"], name: "index_seekers_on_division_id"
+    t.index ["school_id"], name: "index_seekers_on_school_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,4 +108,7 @@ ActiveRecord::Schema.define(version: 2020_06_21_142013) do
   add_foreign_key "divisions", "schools"
   add_foreign_key "schools", "boards"
   add_foreign_key "schools", "locations"
+  add_foreign_key "seekers", "boards"
+  add_foreign_key "seekers", "divisions"
+  add_foreign_key "seekers", "schools"
 end

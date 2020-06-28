@@ -14,9 +14,9 @@ class Admin::ApprovalsController < Admin::BasesController
 
   def reject
     @seeker = Seeker.find(params[:id])
-    @seeker.params[:reject] == true
+    @seeker.reject = true
     @seeker.save
-    redirect_to admin_approvals, notice: "Candidate Rejected!"
+    redirect_to admin_approvals_url, notice: "Candidate Rejected!"
   end
 
 end

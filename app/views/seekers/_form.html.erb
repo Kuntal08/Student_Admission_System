@@ -4,6 +4,7 @@
   <div class="form">
     <div class="sections">
       <strong>Student Information</strong>
+
       <div class="field">
         <%= form.label :first_name %>
         <%= form.text_field :first_name %>
@@ -69,16 +70,16 @@
     <div class="sections">
       <strong>Selection Information</strong>
       <div class="field">
-        <%= form.label :board %>
-        <%= form.select(:board, @board_options) %>
+        <%= form.label :board_id %>
+        <%= form.select(:board_id, @board_options) %>
       </div>
       <div class="field">
-        <%= form.label :school %>
-        <%= form.select(:school, @school_options) %>
+        <%= form.label :school_id %>
+        <%= form.select(:school_id, @school_options) %>
       </div>
       <div class="field">
-        <%= form.label :division %>
-        <%= form.select(:division, @division_options) %>
+        <%= form.label :division_id %>
+        <%= form.select(:division_id, @division_options) %>
       </div>
     </div>
 
