@@ -1,3 +1,49 @@
 // Place all the styles related to the Divisions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin: auto;
+  margin-top: 3%;
+}
+
+td, th {
+  text-align: left;
+  padding: 10px;
+}
+
+th {
+    background: #8c8c8c;
+    color: #FFFFFF;
+}
+
+.new_link a {
+    text-decoration: none;
+    color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #F2F2F2;
+}
+tr:nth-child(odd) {
+    background: #c9cccf;
+}
+.new_link {
+    background: #004d99;
+    text-align: center;
+}
+.new_link:hover {
+  background:#00264d;
+}
+.link {
+    background: #cce6ff;
+    text-align: center;
+}
+.link a {
+    text-decoration: none;
+}
+.link:hover {
+    background: #e6f2ff;
+}

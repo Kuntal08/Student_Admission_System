@@ -8,4 +8,18 @@ class School < ApplicationRecord
   validates :image, presence: true
   validates :name, presence: true, length: { maximum: 30, minimum: 2 }
   validates :description, presence: true , length: { maximum: 150, minimum: 5 }
+
+  def self.search(search)
+    if search
+      location = Location.where('city_name LIKE ?', "%"+search+"%")
+      school = School.where('name LIKE ?', "%"+search+"%")
+      if school
+        self.where(id: school).or(self.where(location_id: location))
+      else
+        School.all
+      end
+    else
+      School.all
+    end
+  end
 end

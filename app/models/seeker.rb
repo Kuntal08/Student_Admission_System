@@ -1,6 +1,5 @@
 class Seeker < ApplicationRecord
   belongs_to :school
-  belongs_to :board
   belongs_to :division
 
   validates :first_name, presence: true
@@ -14,5 +13,5 @@ class Seeker < ApplicationRecord
   validates :mother_name, presence: true
   validates :father_employment, presence: true
   validates :mother_employment, presence: true
-  
+
 end

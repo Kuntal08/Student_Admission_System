@@ -37,6 +37,7 @@
             <div class="nav-item"><%= link_to "Edit Categories", admin_root_path %></div>
             <div class="nav-item"><%= link_to "Approval Panel", admin_approvals_path%></div>
           <% else %>
+            <div class="nav-item"><%= link_to "Schools", admin_schools_path %></div>
             <div class="nav-item"><%= link_to "Admission Form", new_seeker_path %></div>
             <div class="nav-item"><%= link_to "Candidate Dashboard", seekers_path %></div>
           <% end %>
@@ -48,6 +49,16 @@
         <% end %>
       </div>
     </div>
+    <% if current_user%>
+      <div class="search">
+        <%= form_tag admin_schools_path, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :name => nil %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
       <%= yield %>
   </body>
 </html>

@@ -19,10 +19,10 @@
     <% elsif seeker.reject == true %>
       <td> Rejected </td>
     <% end %>
-    <td><%= link_to 'Show', seeker_path(seeker) %></td>
+    <td class="link"><%= link_to 'Show', seeker_path(seeker) %></td>
     <% if seeker.approve == false && seeker.reject == false %>
-      <td><%= link_to 'Update Application', edit_seeker_path(seeker) %></td>
-      <td><%= link_to 'Withdraw Application', seeker_path(seeker),
+      <td class="link"><%= link_to 'Update Application', edit_seeker_path(seeker) %></td>
+      <td class="link"><%= link_to 'Withdraw Application', seeker_path(seeker),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     <% end %>

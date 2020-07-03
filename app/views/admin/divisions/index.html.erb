@@ -4,16 +4,16 @@
   <tr>
     <th>Division</th>
     <th>Stage</th>
-    <th><%= link_to 'New board', new_admin_division_path %></th>
+    <th class="new_link"><%= link_to 'New board', new_admin_division_path %></th>
   </tr>
 
   <% @divisions.each do |division| %>
     <tr>
       <td><%= division.division %></td>
       <td><%= division.stage %></td>
-      <td><%= link_to 'Show', admin_division_path(division) %></td>
-      <td><%= link_to 'Edit', edit_admin_division_path(division) %></td>
-      <td><%= link_to 'Destroy', admin_division_path(division),
+      <td class="link"><%= link_to 'Show', admin_division_path(division) %></td>
+      <td class="link"><%= link_to 'Edit', edit_admin_division_path(division) %></td>
+      <td class="link"><%= link_to 'Destroy', admin_division_path(division),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>

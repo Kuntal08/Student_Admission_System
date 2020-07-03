@@ -5,7 +5,7 @@
     <th>City Name</th>
     <th>Country Name</th>
     <th>Pin Code</th>
-    <th><%= link_to 'New Location', new_admin_location_path %></th>
+    <th class="new_link"><%= link_to 'New Location', new_admin_location_path %></th>
   </tr>
 
   <% @locations.each do |location| %>
@@ -13,9 +13,9 @@
       <td><%= location.city_name %></td>
       <td><%= location.country_name %></td>
       <td><%= location.pin %></td>
-      <td><%= link_to 'Show', admin_location_path(location) %></td>
-      <td><%= link_to 'Edit', edit_admin_location_path(location) %></td>
-      <td><%= link_to 'Destroy', admin_location_path(location),
+      <td class="link"><%= link_to 'Show', admin_location_path(location) %></td>
+      <td class="link"><%= link_to 'Edit', edit_admin_location_path(location) %></td>
+      <td class="link"><%= link_to 'Destroy', admin_location_path(location),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>

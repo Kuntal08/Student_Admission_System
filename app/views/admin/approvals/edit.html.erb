@@ -1,0 +1,10 @@
+<%= form_with(model: @seeker, local: true) do |form| %>
+  <p>
+    <%= form.label :reason %><br>
+    <%= form.text_area :reason %>
+  </p>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

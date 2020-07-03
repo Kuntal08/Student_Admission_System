@@ -1,5 +1,20 @@
+<%= form_with(model: @seeker, local: true) do |form| %>
+
+<% if @seeker.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@seeker.errors.count, "error") %> Prohibited
+      this seeker from being saved:
+    </h2>
+    <ul>
+      <% @seeker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="form-field">
-  <%= form_with(model: @seeker, local: true) do |form| %>
 
   <div class="form">
     <div class="sections">
@@ -69,17 +84,14 @@
 
     <div class="sections">
       <strong>Selection Information</strong>
-      <div class="field">
-        <%= form.label :board_id %>
-        <%= form.select(:board_id, @board_options) %>
-      </div>
+
       <div class="field">
         <%= form.label :school_id %>
-        <%= form.select(:school_id, @school_options) %>
+        <%= form.grouped_collection_select :school_id, Board.order(:board), :schools, :board, :id, :name, include_blank: true %>
       </div>
       <div class="field">
         <%= form.label :division_id %>
-        <%= form.select(:division_id, @division_options) %>
+        <%= form.collection_select :division_id, Division.order(:division), :id, :division, include_blank: true %>
       </div>
     </div>
 

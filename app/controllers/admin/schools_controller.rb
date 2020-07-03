@@ -1,8 +1,9 @@
 class Admin::SchoolsController < Admin::BasesController
-  before_action :is_admin?
+  before_action :is_admin?, only: [:new,:create,:update,:destroy]
 
   def index
-    @schools = School.all
+#    @schools = School.all
+    @schools = School.search(params[:search])
   end
 
   def show

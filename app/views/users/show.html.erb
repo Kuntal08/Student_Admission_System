@@ -1,20 +1,22 @@
 <h1>Profile Details</h1>
-<div class="info">
-  <div class="heading">
-    <strong>Name:</strong>
+<div class="show_class">
+  <div class="info">
+    <div class="heading">
+      <strong>Name:</strong>
+    </div>
+    <div class="data">
+      <%= @user.name %>
+    </div>
   </div>
-  <div class="data">
-    <%= @user.name %>
-  </div>
-</div>
 
-<div class="info">
-  <div class="heading">
-    <strong>Email:</strong>
-  </div>
-  <div class="data">
-    <%= @user.email %>
-  </div>
+  <div class="info">
+    <div class="heading">
+      <strong>Email:</strong>
+    </div>
+    <div class="data">
+      <%= @user.email %>
+    </div>
+  </div>  
 </div>
 
 <%= link_to 'Back', root_path %>

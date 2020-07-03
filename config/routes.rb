@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     resources :locations
     get "/approve/:id", to:"approvals#approve", as:'approve'
     get "/reject/:id", to:"approvals#reject", as:'reject'
-    resources :approvals, only: [:index, :show]
+    get "/reject/reason/:id", to:"approvals#reason", as:'reason'
+    resources :approvals, only: [:index, :edit, :update]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

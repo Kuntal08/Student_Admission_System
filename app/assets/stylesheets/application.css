@@ -14,13 +14,18 @@
  *= require_self
  */
 
-body{
+/*body{
   background: #CCCCCC;
-}
+}*/
 
 *{
   padding: 0;
   margin: 0;
+}
+
+h1 {
+    text-align: center;
+    padding: 15px;
 }
 
 .navbar {
@@ -144,19 +149,9 @@ body{
   height: 25px;
   margin-top: 8px;
 }
-/* Table format display*/
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
+.search {
+    width: 100%;
+    background: #bfbfbf;
+    text-align: right;
+    padding: 10px 0;
 }

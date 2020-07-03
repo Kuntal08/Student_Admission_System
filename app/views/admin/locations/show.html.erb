@@ -1,28 +1,32 @@
-<div class="info">
-  <div class="heading">
-    <strong>City Name:</strong>
+<h2>Location:<%= @location.city_name %></h2>
+<div class="show_class">
+  <div class="info">
+    <div class="heading">
+      <strong>City Name:</strong>
+    </div>
+    <div class="data">
+      <%= @location.city_name %>
+    </div>
   </div>
-  <div class="data">
-    <%= @location.city_name %>
+
+  <div class="info">
+    <div class="heading">
+      <strong>Country Name:</strong>
+    </div>
+    <div class="data">
+      <%= @location.country_name %>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class="heading">
+      <strong>Pin:</strong>
+    </div>
+    <div class="data">
+      <%= @location.pin %>
+    </div>
   </div>
 </div>
 
-<div class="info">
-  <div class="heading">
-    <strong>Country Name:</strong>
-  </div>
-  <div class="data">
-    <%= @location.country_name %>
-  </div>
-</div>
-
-<div class="info">
-  <div class="heading">
-    <strong>Pin:</strong>
-  </div>
-  <div class="data">
-    <%= @location.pin %>
-  </div>
-</div>
 
 <%= link_to 'Back', admin_locations_path %>

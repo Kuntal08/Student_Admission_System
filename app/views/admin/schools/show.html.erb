@@ -1,45 +1,45 @@
-<div class="info">
-  <div class="heading">
-    <strong>School Image:</strong>
+<h2><%= @school.name %></h2>
+<div class="show_class">
+  <div class="info">
+    <div class="data_img">
+      <%= image_tag(@school.image) %>
+    </div>
   </div>
-  <div class="data">
-    <%= image_tag(@school.image) %>
-  </div>
-</div>
 
-<div class="info">
-  <div class="heading">
-    <strong>School Name:</strong>
+  <div class="info">
+    <div class="heading">
+      <strong>School Name:</strong>
+    </div>
+    <div class="data">
+      <%= @school.name %>
+    </div>
   </div>
-  <div class="data">
-    <%= @school.name %>
-  </div>
-</div>
 
-<div class="info">
-  <div class="heading">
-    <strong>Description:</strong>
+  <div class="info">
+    <div class="heading">
+      <strong>Description:</strong>
+    </div>
+    <div class="data">
+      <%= @school.description %>
+    </div>
   </div>
-  <div class="data">
-    <%= @school.description %>
-  </div>
-</div>
 
-<div class="info">
-  <div class="heading">
-    <strong>Location:</strong>
+  <div class="info">
+    <div class="heading">
+      <strong>Location:</strong>
+    </div>
+    <div class="data">
+      <%= @location.city_name %>
+    </div>
   </div>
-  <div class="data">
-    <%= @location.city_name %>
-  </div>
-</div>
 
-<div class="info">
-  <div class="heading">
-    <strong>Board:</strong>
-  </div>
-  <div class="data">
-    <%= @board.board %>
+  <div class="info">
+    <div class="heading">
+      <strong>Board:</strong>
+    </div>
+    <div class="data">
+      <%= @board.board %>
+    </div>
   </div>
 </div>
 

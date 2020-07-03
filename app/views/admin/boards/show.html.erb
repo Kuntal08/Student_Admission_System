@@ -1,27 +1,30 @@
-<div class="info">
-  <div class="heading">
-    <strong>Board:</strong>
+<h2><%= @board.board %></h2>
+<div class="show_class">
+  <div class="info">
+    <div class="heading">
+      <strong>Board:</strong>
+    </div>
+    <div class="data">
+      <%= @board.board %>
+    </div>
   </div>
-  <div class="data">
-    <%= @board.board %>
-  </div>
-</div>
 
-<div class="info">
-  <div class="heading">
-    <strong>Full Form:</strong>
+  <div class="info">
+    <div class="heading">
+      <strong>Full Form:</strong>
+    </div>
+    <div class="data">
+      <%= @board.full_form %>
+    </div>
   </div>
-  <div class="data">
-    <%= @board.full_form %>
-  </div>
-</div>
 
-<div class="info">
-  <div class="heading">
-    <strong>Description:</strong>
-  </div>
-  <div class="data">
-    <%= @board.description %>
+  <div class="info">
+    <div class="heading">
+      <strong>Description:</strong>
+    </div>
+    <div class="data">
+      <%= @board.description %>
+    </div>
   </div>
 </div>
 
