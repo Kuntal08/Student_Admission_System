@@ -1,12 +1,15 @@
 <h1>Edit Categories</h1>
 <div class="categories">
-<table>
-  <tr>
-    <th class="link"><%= link_to "Boards", admin_boards_path %></th>
-    <th class="link"><%= link_to "School Name", admin_schools_path%></th>
-    <th class="link"><%= link_to "Classes/Sub Divisions", admin_divisions_path %></th>
-    <th class="link"><%= link_to "Location", admin_locations_path %></th>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <th class="link"><%= link_to "Boards", admin_boards_path %></th>
+      <th class="link"><%= link_to "School Name", admin_schools_path%></th>
+      <th class="link"><%= link_to "Classes/Sub Divisions", admin_divisions_path %></th>
+      <th class="link"><%= link_to "Location", admin_locations_path %></th>
+    </tr>
+  </table>
+</div>
 
+<div class="nav-back">
+  <%= link_to "Back", root_path %>
 </div>

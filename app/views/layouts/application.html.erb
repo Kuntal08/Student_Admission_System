@@ -52,10 +52,10 @@
     <% if current_user%>
       <div class="search">
         <%= form_tag admin_schools_path, :method => 'get' do %>
-          <p>
-            <%= text_field_tag :search, params[:search] %>
+          <div class="search-field">
+            <%= text_field_tag :search, params[:search], placeholder:"Search by School Name or Location" %> 
             <%= submit_tag "Search", :name => nil %>
-          </p>
+          </div>
         <% end %>
       </div>
     <% end %>

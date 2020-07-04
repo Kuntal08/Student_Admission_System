@@ -149,9 +149,86 @@ h1 {
   height: 25px;
   margin-top: 8px;
 }
+
+/* Search Section */
 .search {
     width: 100%;
     background: #bfbfbf;
     text-align: right;
-    padding: 10px 0;
+    padding: 5px 0;
+}
+.search-field input[type="submit"] {
+    width: 10%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    color: #4D4D4D;
+}
+.search-field input[type="submit"]:hover{
+    color: #000000;
+    padding: 3px;
+    border: 2px solid #333333;
+}
+
+.search-field input#search {
+    width: 40%;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+.search-field input#search:hover {
+    padding: 3px;
+    border: 2px solid #333333;
+}
+
+/* Error Message */
+div#error_explanation {
+    border: 2px solid #ff5050;
+    background: #ffb3b3;
+    margin: auto;
+    width: 75%;
+}
+
+#error_explanation .head {
+    background: #FF6666;
+}
+
+.error-list {
+    padding: 10px 45px;
+}
+
+.error-list ul li{
+  padding: 1px;
+}
+
+.field_with_errors {
+    width: 100%;
+}
+
+div#flash_notice {
+    background: #d9ffb3;
+    padding: 3px;
+}
+div#flash_danger {
+    background: #ffb3b3;
+    padding: 3px;
+}
+
+/* Back Button */
+.nav-back{
+  text-align: center;
+  margin-top: 60px;
+}
+.nav-back a {
+    text-decoration: none;
+    border: 2px solid #00004D;
+    background: #E6E6FF;
+    border-radius: 10px;
+    padding: 5px 15px;
+    color: #00004D;
+}
+.nav-back a:hover{
+    border-color: #E6E6FF;
+    background: #00004D;
+    color: #E6E6FF;
 }

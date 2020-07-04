@@ -14,14 +14,14 @@ class Admin::SchoolsController < Admin::BasesController
 
   def new
     @school = School.new
-    @board_options = Board.all.map{ |b| [b.board, b.id]}
-    @location_options = Location.all.map{ |l| [l.city_name, l.id]}
+#    @board_options = Board.all.map{ |b| [b.board, b.id]}
+#    @location_options = Location.all.map{ |l| [l.city_name, l.id]}
   end
 
   def edit
     @school = School.find(params[:id])
-    @board_options = Board.all.map{ |b| [b.board, b.id]}
-    @location_options = Location.all.map{ |l| [l.city_name, l.id]}
+#    @board_options = Board.all.map{ |b| [b.board, b.id]}
+#    @location_options = Location.all.map{ |l| [l.city_name, l.id]}
   end
 
   def create

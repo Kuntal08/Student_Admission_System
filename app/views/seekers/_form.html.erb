@@ -2,104 +2,147 @@
 
 <% if @seeker.errors.any? %>
   <div id="error_explanation">
-    <h2>
-      <%= pluralize(@seeker.errors.count, "error") %> Prohibited
-      this seeker from being saved:
-    </h2>
-    <ul>
-      <% @seeker.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+    <div class="head">
+      <h2>
+        <%= pluralize(@seeker.errors.count, "error") %> Prohibited
+        this seeker from being saved:
+      </h2>
+    </div>
+    <div class="error-list">
+      <ul>
+        <% @seeker.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 <% end %>
 
-<div class="form-field">
-
-  <div class="form">
-    <div class="sections">
+<div class="input-form">
+  <div class="section">
+    <div class="header">
       <strong>Student Information</strong>
+    </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= form.label :first_name %>
-        <%= form.text_field :first_name %>
+        <div class="input-section">
+          <%= form.text_field :first_name %>
+        </div>
       </div>
-      <div class="field">
+
+      <div class="input-field">
         <%= form.label :middle_name %>
-        <%= form.text_field :middle_name %>
+        <div class="input-section">
+          <%= form.text_field :middle_name %>
+        </div>
       </div>
-      <div class="field">
+
+      <div class="input-field">
         <%= form.label :last_name %>
-        <%= form.text_field :last_name %>
+        <div class="input-section">
+          <%= form.text_field :last_name %>
+        </div>
       </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= form.label :home_address %>
-        <%= form.text_area :home_address %>
+        <div class="input-section">
+          <%= form.text_area :home_address %>
+        </div>
       </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= form.label :email %>
-        <%= form.email_field :email %>
+        <div class="input-section">
+          <%= form.email_field :email %>
+        </div>
       </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= form.label :phone %>
-        <%= form.telephone_field :phone %>
+        <div class="input-section">
+          <%= form.telephone_field :phone %>
+        </div>
       </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= form.label :birth_date %>
-        <%= form.date_field :birth_date %>
+        <div class="input-section">
+          <%= form.date_field :birth_date %>
+        </div>
       </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= form.label :gender %>
-        <%= form.radio_button :gender, 'Male' %> Male
-        <%= form.radio_button :gender, 'Female' %> Female
-        <%= form.radio_button :gender, 'Other' %> Other
+        <div class="input-section">
+          <%= form.radio_button :gender, 'Male' %> Male
+          <%= form.radio_button :gender, 'Female' %> Female
+          <%= form.radio_button :gender, 'Other' %> Other
+        </div>
       </div>
     </div>
 
-    <div class="sections">
-      <strong>Student Information</strong>
-      <div class="field">
+    <div class="section">
+      <div class="header">
+        <strong>Student's Guardian Information</strong>
+      </div>
+
+      <div class="input-field">
         <%= form.label :father_name %>
-        <%= form.text_field :father_name %>
-      </div>
-      <div class="field">
-        <%= form.label :mother_name %>
-        <%= form.text_field :mother_name %>
-      </div>
-      <div class="field">
-        <%= form.label :mother_employment %>
-        <%= form.text_field :mother_employment %>
+        <div class="input-section">
+          <%= form.text_field :father_name %>
+        </div>
       </div>
 
-      <div class="field">
+      <div class="input-field">
+        <%= form.label :mother_name %>
+        <div class="input-section">
+          <%= form.text_field :mother_name %>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <%= form.label :mother_employment %>
+        <div class="input-section">
+          <%= form.text_field :mother_employment %>
+        </div>
+      </div>
+
+      <div class="input-field">
         <%= form.label :father_employment %>
-        <%= form.text_field :father_employment %>
+        <div class="input-section">
+          <%= form.text_field :father_employment %>
+        </div>
       </div>
     </div>
 
-    <div class="sections">
-      <strong>Selection Information</strong>
-
-      <div class="field">
-        <%= form.label :school_id %>
-        <%= form.grouped_collection_select :school_id, Board.order(:board), :schools, :board, :id, :name, include_blank: true %>
+    <div class="section">
+      <div class="header">
+        <strong>Selection Information</strong>
       </div>
-      <div class="field">
+
+      <div class="input-field">
+        <%= form.label :school_id %>
+        <div class="input-section">
+          <%= form.grouped_collection_select :school_id, Board.order(:board), :schools, :board, :id, :name, include_blank: true %>
+        </div>
+      </div>
+
+      <div class="input-field">
         <%= form.label :division_id %>
-        <%= form.collection_select :division_id, Division.order(:division), :id, :division, include_blank: true %>
+        <div class="input-section">
+          <%= form.collection_select :division_id, Division.order(:division), :id, :division, include_blank: true %>
+        </div>
       </div>
     </div>
 
     <div class="actions">
       <%= form.submit %>
     </div>
-  </div>
   <% end %>
 </div>
 
-<%= link_to "Back", seekers_path %>
+<div class="nav-back">
+  <%= link_to "Back", seekers_path %>
+</div>

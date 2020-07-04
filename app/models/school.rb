@@ -1,6 +1,6 @@
 class School < ApplicationRecord
   has_many :divisions
-  has_many :seekers
+  has_many :seekers, dependent: :destroy
   belongs_to :location
   belongs_to :board
   has_one_attached :image

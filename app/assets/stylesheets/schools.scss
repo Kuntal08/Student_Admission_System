@@ -8,3 +8,30 @@
     background: #bfbfbf;
     padding: 8px;
 }
+.input-form {
+    border: 3px solid #cccccc;
+    background: #bfbfbf;
+    width: 55%;
+    margin: auto;
+    margin-top: 15px;
+}
+.input-field {
+    padding: 10px;
+}
+
+.input-section {
+    padding: 5px;
+}
+
+.input-section input {
+    width: 100%;
+    height: 20px;
+}
+.input-section textarea {
+    width: 100%;
+    height: 50px;
+}
+.input-section select {
+    width: 50%;
+    height: 20px;
+}

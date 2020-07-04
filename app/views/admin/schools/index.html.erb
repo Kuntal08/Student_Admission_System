@@ -5,7 +5,7 @@
     <th>School Name</th>
     <th>Description</th>
     <% if current_user.try(:admin?) %>
-      <th class="new_link"><%= link_to 'New board', new_admin_school_path %></th>
+      <th class="new_link"><%= link_to 'New School', new_admin_school_path %></th>
     <% end %>
   </tr>
 
@@ -23,8 +23,11 @@
     </tr>
   <% end %>
 </table>
-<% if current_user.try(:admin?) %>
-  <%= link_to 'Back', admin_root_path %>
-<% else %>
-  <%= link_to 'Back', root_path %>
-<% end %>
+
+<div class="nav-back">
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'Back', admin_root_path %>
+  <% else %>
+    <%= link_to 'Back', root_path %>
+  <% end %>
+</div>

@@ -2,34 +2,47 @@
 
   <% if @division.errors.any? %>
     <div id="error_explanation">
-      <h2>
-        <%= pluralize(@division.errors.count, "error") %> Prohibited
-        this division from being saved:
-      </h2>
-      <ul>
-        <% @division.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+      <div class="head">
+        <h2>
+          <%= pluralize(@division.errors.count, "error") %> Prohibited
+          this division from being saved:
+        </h2>
+      </div>
+      <div class="error-list">
+        <ul>
+          <% @division.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <p>
-    <%= form.label :division %><br>
-    <%= form.text_field :division %>
-  </p>
+  <div class="input-form">
+    <div class="input-field">
+      <%= form.label :division %><br>
+      <div class="input-section">
+        <%= form.text_field :division %>
+      </div>
+    </div>
 
-  <p>
-    <%= form.label :stage %><br>
-    <%= form.text_field :stage %>
-  </p>
+    <div class="input-field">
+      <%= form.label :stage %><br>
+      <div class="input-section">
+        <%= form.text_field :stage %>
+      </div>
+    </div>
 
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
+    <div class="input-field">
+      <%= form.label :description %><br>
+      <div class="input-section">
+        <%= form.text_area :description %>
+      </div>
+    </div>
 
-  <p>
-    <%= form.submit %>
-  </p>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+
 <% end %>

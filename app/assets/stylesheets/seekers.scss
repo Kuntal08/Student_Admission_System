@@ -1,3 +1,17 @@
 // Place all the styles related to the Seekers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.input-section {
+    display: flex;
+}
+.section {
+    border: 2px solid #a6a6a6;
+    padding: 10px;
+    margin: 10px 0px;
+}
+.header {
+    text-align: center;
+}
+error_explanation ul {
+    list-style-type: square;
+}

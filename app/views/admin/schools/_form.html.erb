@@ -1,48 +1,61 @@
-<div class="form-field">
-  <%= form_with(model: [:admin, @school], local: true) do |form| %>
+<%= form_with(model: [:admin, @school], local: true) do |form| %>
 
     <% if @school.errors.any? %>
       <div id="error_explanation">
-        <h2>
-          <%= pluralize(@school.errors.count, "error") %> Prohibited
-          this school from being saved:
-        </h2>
-        <ul>
-          <% @school.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
+        <div class="head">
+          <h2>
+            <%= pluralize(@school.errors.count, "error") %> Prohibited
+            this school from being saved:
+          </h2>
+        </div>
+        <div class="error-list">
+          <ul>
+            <% @school.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     <% end %>
+    
+    <div class="input-form">
+      <div class="input-field">
+        <%= form.label :name %><br>
+        <div class="input-section">
+          <%= form.text_field :name %>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
+      <div class="input-field">
+        <%= form.label :image %><br>
+        <div class="input-section">
+          <%= form.file_field :image %>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <%= form.label :description %><br>
+        <div class="input-section">
+          <%= form.text_area :description %>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <%= form.label :board_id %>
+        <div class="input-section">
+          <%= form.select :board_id, Board.all.collect { |b| [b.board, b.id] }, include_blank: true %>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <%= form.label :location_id %>
+        <div class="input-section">
+          <%= form.select :location_id, Location.all.collect { |l| [l.city_name, l.id] }, include_blank: true %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
     </div>
-
-    <div class="field">
-      <%= form.label :image %><br>
-      <%= form.file_field :image %>
-    </div>
-
-    <div class="field">
-      <%= form.label :description %><br>
-      <%= form.text_area :description %>
-    </div>
-
-    <div class="field">
-      <%= form.label :board_id %>
-      <%= form.select(:board_id, @board_options) %>
-    </div>
-
-    <div class="field">
-      <%= form.label :location_id %>
-      <%= form.select(:location_id, @location_options) %>
-    </div>
-
-    <p>
-      <%= form.submit %>
-    </p>
-  <% end %>
-
-</div>
+<% end %>
