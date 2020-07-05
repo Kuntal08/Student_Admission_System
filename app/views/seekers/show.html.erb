@@ -1,3 +1,14 @@
+<% if @seeker.reason %>
+  <div class="reason">
+    <div class="reason-head">
+      <h3>Reason of Rejection</h3>
+    </div>
+    <div class="reason-body">
+      <%= @seeker.reason %>
+    </div>
+  </div>
+<% end %>
+
 <div class="show_class">
   <div class="info">
     <div class="heading">
@@ -121,12 +132,21 @@
 </div>
 
 <% if current_user.try(:admin?) %>
-  <p>
+<div class="admin-approve">
+  <div class="option" id="approve">
     <%= link_to 'Approve', admin_approve_path(@seeker) %>
+  </div>
+  <div class="option" id="reject">
     <%= link_to 'Reject', admin_reject_path(@seeker) %>
-  </p>
+  </div>
+</div>
+
 <% end %>
 
 <div class="nav-back">
-  <%= link_to 'Back', seekers_path %>
+  <% if current_user.admin == true %>
+    <%= link_to 'Back', admin_approvals_path %>
+  <% else %>
+    <%= link_to 'Back', seekers_path %>
+  <% end %>
 </div>

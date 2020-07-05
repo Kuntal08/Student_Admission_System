@@ -16,7 +16,7 @@
         <td><%= Division.find(seeker.division_id).division %></td>
         <td class="link"><%= link_to 'Show', seeker_path(seeker) %></td>
         <td class="link"><%= link_to 'Approve', admin_approve_path(seeker) %></td>
-        <td class="link"><%= link_to 'Reject', admin_reject_path(seeker) %></td>
+        <td class="link"><%= link_to 'Reject', edit_admin_approval_path(seeker) %></td>
       </tr>
     <% end %>
   <% end %>
