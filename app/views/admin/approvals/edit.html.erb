@@ -1,10 +1,14 @@
 <%= form_with(model: @seeker, local: true) do |form| %>
-  <p>
-    <%= form.label :reason %><br>
-    <%= form.text_area :reason %>
-  </p>
+  <div class="input-form">
+    <div class="input-field">
+      <%= form.label :reason %><br>
+    </div>
+    <div class="input-section">
+      <%= form.text_area :reason, required: true %>
+    </div>
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit Reason"%>
   </div>
 <% end %>

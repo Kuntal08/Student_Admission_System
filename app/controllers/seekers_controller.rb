@@ -1,7 +1,7 @@
 class SeekersController < ApplicationController
 
   def index
-    @seekers = Seeker.all
+    @seekers = Seeker.where(user_id: session[:user_id])
   end
 
   def show
@@ -21,6 +21,7 @@ class SeekersController < ApplicationController
 
   def create
     @seeker = Seeker.new(seeker_params)
+    @seeker.user_id = session[:user_id]
     if @seeker.save
       @school = School.find(@seeker.school_id)
       @seeker.board_id = @school.board_id
