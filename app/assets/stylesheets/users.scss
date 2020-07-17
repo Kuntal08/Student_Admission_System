@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .show_class {
-    border: 5px solid #404040;
-    background: #b3b3b3;
-    border-radius: 10px;
+    border: 2px solid #404040;
+    background: #F2F2F2;
+    border-radius: 5px;
     margin: auto;
     width: 70%;
     padding: 30px;
@@ -13,4 +13,10 @@
 
 .info {
     padding: 10px;
+}
+
+.info .data {
+    padding: 8px;
+    background: #009999;
+    color: #FFFFFF;
 }

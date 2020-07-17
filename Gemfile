@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
+  gem 'faker', '~> 1.6', '>= 1.6.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,6 +53,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

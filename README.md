@@ -5,20 +5,29 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version:
+        ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux]
 
-* System dependencies
+* Rails version:
+        Rails 6.0.3.1
 
-* Configuration
+* Database used:
+        Sqlite3
 
-* Database creation
+* Database version:
+        3.29.0
 
-* Database initialization
+* Node version:
+        v12.18.0
 
-* How to run the test suite
+* Yarn version:
+        1.22.4
+
+* How to deploy the database:
+        1) rake db:create
+        2) rake db:migrate
+        3) rake db:seed
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...

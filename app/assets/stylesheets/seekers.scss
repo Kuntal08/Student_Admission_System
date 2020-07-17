@@ -3,14 +3,17 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .input-section {
     display: flex;
+    padding-top: 4px;
 }
 .section {
     border: 2px solid #a6a6a6;
-    padding: 10px;
+    padding-bottom: 5px;
     margin: 10px 0px;
 }
 .header {
     text-align: center;
+    background: #E6E6E6;
+    padding: 3px;
 }
 error_explanation ul {
     list-style-type: square;

@@ -4,9 +4,9 @@ class Seeker < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :home_address, presence: true, length: { maximum: 50, minimum: 10 }
+  validates :home_address, presence: true, length: { minimum: 10 }
   validates :email, presence: true
-  validates :phone, presence: true, length: { maximum: 10, minimum: 8}
+  validates :phone, presence: true, length: { is: 10 }
   validates :birth_date, presence: true
   validates :father_name, presence: true
   validates :mother_name, presence: true

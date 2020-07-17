@@ -2,13 +2,15 @@
   <div class="input-form">
     <div class="input-field">
       <%= form.label :reason %><br>
+      <div class="input-section">
+        <%= form.text_area :reason, required: true %>
+      </div>
     </div>
-    <div class="input-section">
-      <%= form.text_area :reason, required: true %>
+
+    <div class="actions">
+      <%= form.submit "Submit Reason"%>
     </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit "Submit Reason"%>
-  </div>
+
 <% end %>

@@ -27,42 +27,42 @@
       <div class="input-field">
         <%= form.label :first_name %>
         <div class="input-section">
-          <%= form.text_field :first_name %>
+          <%= form.text_field :first_name, placeholder: "  Enter First Name*" %>
         </div>
       </div>
 
       <div class="input-field">
         <%= form.label :middle_name %>
         <div class="input-section">
-          <%= form.text_field :middle_name %>
+          <%= form.text_field :middle_name, placeholder: "  Enter Middle Name" %>
         </div>
       </div>
 
       <div class="input-field">
         <%= form.label :last_name %>
         <div class="input-section">
-          <%= form.text_field :last_name %>
+          <%= form.text_field :last_name, placeholder: "  Enter Last Name*" %>
         </div>
       </div>
 
       <div class="input-field">
         <%= form.label :home_address %>
         <div class="input-section">
-          <%= form.text_area :home_address %>
+          <%= form.text_area :home_address, placeholder: " Enter Full Address*" %>
         </div>
       </div>
 
       <div class="input-field">
         <%= form.label :email %>
         <div class="input-section">
-          <%= form.email_field :email %>
+          <%= form.email_field :email, placeholder: "  Enter Email*" %>
         </div>
       </div>
 
       <div class="input-field">
         <%= form.label :phone %>
         <div class="input-section">
-          <%= form.telephone_field :phone %>
+          <%= form.telephone_field :phone, placeholder: "  Enter Contact Number*" %>
         </div>
       </div>
 
@@ -91,28 +91,28 @@
       <div class="input-field">
         <%= form.label :father_name %>
         <div class="input-section">
-          <%= form.text_field :father_name %>
+          <%= form.text_field :father_name, placeholder: "  Enter Father Name*"%>
         </div>
       </div>
 
       <div class="input-field">
         <%= form.label :mother_name %>
         <div class="input-section">
-          <%= form.text_field :mother_name %>
-        </div>
-      </div>
-
-      <div class="input-field">
-        <%= form.label :mother_employment %>
-        <div class="input-section">
-          <%= form.text_field :mother_employment %>
+          <%= form.text_field :mother_name, placeholder: "  Enter Mother Name*" %>
         </div>
       </div>
 
       <div class="input-field">
         <%= form.label :father_employment %>
         <div class="input-section">
-          <%= form.text_field :father_employment %>
+          <%= form.text_field :father_employment, placeholder: "  Enter Father Employment*" %>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <%= form.label :mother_employment %>
+        <div class="input-section">
+          <%= form.text_field :mother_employment, placeholder: "  Enter Mother Employment*" %>
         </div>
       </div>
     </div>
@@ -125,14 +125,14 @@
       <div class="input-field">
         <%= form.label :school_id %>
         <div class="input-section">
-          <%= form.grouped_collection_select :school_id, Board.order(:board), :schools, :board, :id, :name, include_blank: true %>
+          <%= form.grouped_collection_select :school_id, Board.order(:board), :schools, :board, :id, :name %>
         </div>
       </div>
 
       <div class="input-field">
         <%= form.label :division_id %>
         <div class="input-section">
-          <%= form.collection_select :division_id, Division.order(:division), :id, :division, include_blank: true %>
+          <%= form.collection_select :division_id, Division.order(:division), :id, :division %>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@
       <tr>
         <td><%= seeker.first_name %> <%= seeker.middle_name %> <%= seeker.last_name %></td>
         <td><%= School.find(seeker.school_id).name %></td>
-        <td><%= Board.find(seeker.school_id).board %></td>
+        <td><%= Board.find(seeker.board_id).board %></td>
         <td><%= Division.find(seeker.division_id).division %></td>
         <td class="link"><%= link_to 'Show', seeker_path(seeker) %></td>
         <td class="link"><%= link_to 'Approve', admin_approve_path(seeker) %></td>
